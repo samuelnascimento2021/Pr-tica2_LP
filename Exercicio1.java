@@ -8,16 +8,18 @@ public class Exercicio1 {
 		Scanner ler = new Scanner(System.in);
 		
 		int opcao, numParcelas;
-		double TotalGasto;
+		double TotalGasto=0;
 		
 		System.out.println("Insira o total gasto");
 		TotalGasto = ler.nextDouble();
 		
-		do {
-			System.out.println("Selecione uma das opções de pagamento: (Digite -1 para sair)");
-			System.out.println("1- À Vista: com 10% de desconto");
+		while(TotalGasto != -1) {
+			
+			
+			System.out.println("Selecione uma das opÃ§Ãµes de pagamento: ");
+			System.out.println("1- Ã€ Vista: com 10% de desconto");
 			System.out.println("2- Parcelado 2x");
-			System.out.println("3- Parcelado de 3x até 6x com 3% de juros ao mês (somente para compras acima de R$ 500,00");
+			System.out.println("3- Parcelado de 3x atÃ© 6x com 3% de juros ao mÃªs (somente para compras acima de R$ 500,00");
 			
 			opcao = ler.nextInt();
 			
@@ -34,26 +36,38 @@ public class Exercicio1 {
 				
 			case 3:
 				{
-					System.out.println("Insira o número de parcelas");
-					numParcelas = ler.nextInt();
-					if(numParcelas>= 3 & numParcelas<=6) {
-						if(TotalGasto>=500) {
-							System.out.printf("Valor total parcelado: R$ " + TotalGasto * 1.03 + ", em " + numParcelas + " parcelas de: R$ " + (TotalGasto * 1.03)/numParcelas + "\n");							
+										
+					if(TotalGasto>=500) 
+					{
+						System.out.println("Insira o nÃºmero de parcelas");
+						numParcelas = ler.nextInt();
+						
+						if(numParcelas>= 3 & numParcelas<=6) 
+							{
+								System.out.printf("Valor total parcelado: %.2f, em %d parcelas de: R$ %.2f \n" , TotalGasto * 1.03 ,  numParcelas , (TotalGasto * 1.03)/numParcelas);							
+							}
+						else 
+						{
+							System.out.println("NÃºmero de parcelas invÃ¡lido");
 						}
-						else {
-							System.out.println("Escolha nova forma de pagamento");									
-						}
+						
 					}
-					else {
-						System.out.println("Número de parcelas inválido");
+										
+					else 
+					{
+						System.out.println("Escolha nova forma de pagamento");									
 					}
 						break;
 				}
+				
+			default : System.out.println("OpÃ§Ã£o invÃ¡lida");
 			
 			}
 		
+			System.out.println("\nInsira o total gasto");
+			TotalGasto = ler.nextDouble();
 		}
-		while(opcao!=-1);
+		
 	}
 
 }

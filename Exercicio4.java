@@ -7,9 +7,11 @@ public class Exercicio4 {
 		
 		Scanner ler = new Scanner(System.in);
 		Random random = new Random();
-
-		int opcao, cpf;
-		String nome, dtaVoo, horario;
+		
+		int opcao, numPoltrona;
+		int [] poltrona = new int[100];
+		int i=0;
+		String nome, dtaVoo, horario, cpf;
 		
 				
 		do{
@@ -22,7 +24,7 @@ public class Exercicio4 {
 					System.out.println("Insira seu nome");
 					nome = ler.next();
 					System.out.println("Insira seu CPF");
-					cpf = ler.nextInt();
+					cpf = ler.next();
 					
 					ler = new Scanner(System.in);
 					
@@ -35,25 +37,47 @@ public class Exercicio4 {
 					
 					int numVoo = random.nextInt(999);
 					
-					System.out.println("O número do seu voo é: " + numVoo);
+					System.out.println("O nÃºmero do seu voo Ã©: " + numVoo);
+					System.out.println();
 					break;
 					
 				case 2:
 					System.out.println("Insira seu CPF");
-					cpf = ler.nextInt();
-					System.out.println("Insira o número do voo");
+					cpf = ler.next();
+					System.out.println("Insira o nÃºmero do voo");
 					numVoo = ler.nextInt();
 					
-					System.out.println("Check in realizado com sucesso!");
-					break;
+					System.out.println("Insira o nÃºmero da poltrona");
+					numPoltrona = ler.nextInt();
+					
+					i = numPoltrona;
+										
+					if(poltrona[i] != 0)
+					{
+						System.out.println("Poltrona jÃ¡ ocupada \n");
+					}
+					
+					else 
+					{
+						System.out.println("Check in realizado com sucesso! \n");
+						poltrona[i]=i;
+					}
+						break;
 					
 				case 3:
 					System.out.println("Insira seu CPF");
-					cpf = ler.nextInt();
-					System.out.println("Insira o número do voo");
+					cpf = ler.next();
+					System.out.println("Insira o nÃºmero do voo");
 					numVoo = ler.nextInt();
+					System.out.println("Insira o nÃºmero da poltrona");
+					numPoltrona = ler.nextInt();
 					
-					System.out.println("Voo cancelado com sucesso!");
+					i = numPoltrona;
+					
+					poltrona[i] = 0;
+					
+					System.out.println("Voo " + numVoo + " cancelado para o CPF " + cpf);
+					System.out.println();
 					break;
 				
 				case 4:

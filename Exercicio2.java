@@ -2,43 +2,21 @@ package Exercicios_Lista2;
 import java.util.Scanner;
 public class Exercicio2 {
 
-static final int LIN = 50;
-static final int COL = 50;
-	
 public static void main(String[] args) {
-		
-		Scanner input = new Scanner(System.in);
-		int mat[][] = new int[LIN][COL];
-		int dp = 0;
-		int x = 1;
-		
-		//leitura
-		for(int i=0; i<LIN; i++) {
-			for(int j=0; j<COL; j++) {
-				mat[i][j] = x;
-				x+=2;
+	// TODO Auto-generated method stub
+				
+	int mat[][] = new int[50][50];
+	int x = 1;				
+	for(int lin=0; lin<50; lin++) {
+		for(int col=0; col<50; col++) {
+			mat[lin][col] = x;
+			if (lin == col)
+			System.out.printf("%d\t",mat[lin][col]);
+			else{
+				System.out.printf("\t");
+				x+=2; }
 			}
-		}
-		
-		//apresentacao
-		for(int i=0; i<LIN; i++) {
-			for(int j=0; j<COL; j++) {
-				System.out.print("["+mat[i][j]+"]");
-			}
-			System.out.println("\n");
-		}
-		
-		//diagonal principal
-				for(int i=0; i<LIN; i++) {
-					for(int j=0; j<COL; j++) {
-						if(i==j) {
-							dp = dp + mat[i][j];
-						}
-					}
-					
-				}
-		
-		System.out.println("O resultado da diagonal principal é: " + dp);
+				
+		System.out.printf("\n");
 	}
-
 }

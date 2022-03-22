@@ -7,18 +7,28 @@ public class Exercicio3 {
 		
 		Scanner ler = new Scanner(System.in);
 		
-		int[] numeros = new int[10];
+		int[] vetor = new int[10];
+		int aux;
 		
-		for(int i=0; i<numeros.length; i++) {
-				System.out.println("Insira os valores: ");
-				numeros[i] = ler.nextInt();
+		for(int i=0;i<10;i++) {
+			System.out.printf("\nDigite a Posição número %d" , i+1);
+			vetor[i] = ler.nextInt();
 		}
 		
-		Arrays.sort(numeros);
-
-        System.out.println("N�meros ordenados:");
-        for(int numero : numeros)
-            System.out.println(numero);
+		for(int i=0;i<10;i++) {
+			for(int j=0; j<9; j++) {
+				if(vetor[j]> vetor[j+1]) {
+					aux = vetor[j];
+					vetor[j]=vetor[j+1];
+					vetor[j+1]=aux;
+				}
+			}
+		}
+		
+		System.out.println("\nVetor Ordenado");
+		for(int i=0;i<10;i++) {
+			System.out.printf("%d\t",vetor[i]);
+		}
         				
 	}
 

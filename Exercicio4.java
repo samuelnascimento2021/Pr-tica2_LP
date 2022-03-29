@@ -50,19 +50,23 @@ public class Exercicio4 {
 					System.out.println("Insira o número da poltrona");
 					numPoltrona = ler.nextInt();
 					
-					i = numPoltrona;
-										
-					if(poltrona[i] != 0)
-					{
-						System.out.println("Poltrona já ocupada \n");
+					if(numPoltrona>0 && numPoltrona<=100) {
+						i = numPoltrona-1;
+											
+						if(poltrona[i] != 0)
+						{
+							System.out.println("Poltrona já ocupada \n");
+						}
+						
+						else 
+						{
+							System.out.println("Check in realizado com sucesso! \n");
+							poltrona[i]=i;
+						}
 					}
-					
-					else 
-					{
-						System.out.println("Check in realizado com sucesso! \n");
-						poltrona[i]=i;
-					}
-						break;
+					else {System.out.println("Valor inválido!");}
+						
+					break;
 					
 				case 3:
 					System.out.println("Insira seu CPF");
@@ -72,7 +76,7 @@ public class Exercicio4 {
 					System.out.println("Insira o número da poltrona");
 					numPoltrona = ler.nextInt();
 					
-					i = numPoltrona;
+					i = numPoltrona-1;
 					
 					poltrona[i] = 0;
 					
